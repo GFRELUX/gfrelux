@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GF Relux - Asesoría Inmobiliaria</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            background-color: #ffffff; 
+        }
+
+        .container { 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
+                              url('https://scontent.fgdl17-1.fna.fbcdn.net/v/t39.30808-6/370165530_313769831175074_4641092652126559803_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=P1aLwUmidpUQ7kNvwE_JJX-&_nc_oc=AdlIWju6EnIGwaO7YHcbwDuzWjyZImCWZnfCeoOeewGhPTGuuPwFHwWE4VCqamcFdurtJ9NaOM-aFxcyyTdHGt2H&_nc_zt=23&_nc_ht=scontent.fgdl17-1.fna&_nc_gid=gKPFPNhHbjOBEYvDOcHdjg&oh=00_AfqJ0St_vZi4Re59fEcw4YDnXuQFhSb3ITpL0AIzLpXXIw&oe=69611601');
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 40px 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            width: 90%; 
+            max-width: 400px; 
+            position: relative; 
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .content-wrapper { position: relative; z-index: 2; }
+        .hidden { display: none; }
+        
+        h2 { color: #2c3e50; margin: 0 0 10px 0; font-size: 26px; }
+        h3 { color: #2c3e50; margin-bottom: 15px; }
+        p { color: #7f8c8d; margin-bottom: 25px; font-size: 15px; line-height: 1.5; }
+        
+        /* Botones */
+        .menu-btn { width: 100%; padding: 18px; margin: 10px 0; border: none; border-radius: 10px; font-size: 17px; cursor: pointer; font-weight: bold; transition: 0.3s; color: white; }
+        .btn-blue { background-color: #34495e; }
+        .btn-green { background-color: #27ae60; }
+        .btn-gold { background-color: #d4af37; } /* Color para "Conóceme" */
+        
+        /* Sección de confianza */
+        .trust-box { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: left; border-left: 4px solid #27ae60; }
+        .trust-item { font-size: 13px; color: #444; margin-bottom: 8px; display: flex; align-items: center; }
+        .trust-item span { margin-right: 8px; }
+
+        label { display: block; margin-top: 15px; font-weight: 700; font-size: 13px; color: #34495e; text-align: left; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 14px; background: white; }
+
+        .action-btn { width: 100%; padding: 16px; background-color: #e67e22; color: white; border: none; border-radius: 10px; margin-top: 20px; font-size: 16px; cursor: pointer; font-weight: bold; }
+        .btn-back { background: none; color: #95a5a6; text-decoration: underline; border: none; display: block; margin: 20px auto 0; cursor: pointer; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<div id="pantalla-inicio" class="container">
+    <div class="content-wrapper">
+        <h2>GF Relux</h2>
+        <p>Expertos en asesoría inmobiliaria y financiera.</p>
+        <button class="menu-btn btn-gold" onclick="navegar('pantalla-conoceme')">👤 ¿QUIEN ES GABRIEL FLORES?</button>
+        <button class="menu-btn btn-blue" onclick="navegar('pantalla-comprar')">🗝️ QUIERO COMPRAR</button>
+        <button class="menu-btn btn-green" onclick="navegar('pantalla-vender')">🏡 QUIERO VENDER</button>
+    </div>
+</div>
+
+<div id="pantalla-conoceme" class="container hidden">
+    <div class="content-wrapper">
+        <h3>¿Por qué confiar en nosotros?</h3>
+        <p>En <b>GF Relux</b>, la transparencia es nuestra prioridad. Soy un asesor profesional dedicado a proteger tu patrimonio.</p>
+        
+        <div class="trust-box">
+            <div class="trust-item"><span>✅</span> Alianzas con notarios públicos y brokers hipotecarios certificados.</div>
+            <div class="trust-item"><span>✅</span> Contratos revisados y validados legalmente.</div>
+            <div class="trust-item"><span>✅</span> Procesos claros, honestos y enfocados en proteger su inversión.</div>
+            <div class="trust-item"><span>✅</span> Acompañamiento de principio a fin, resolviendo cada duda con precisión.</div>
+        </div>
+
+        <p style="font-size: 13px;">La confianza se construye con resultados, claridad y decisiones bien acompañadas.</p>
+        
+        <button class="menu-btn btn-blue" onclick="window.open('https://www.facebook.com/GFrelux/')">📱 VER FACEBOOK</button>
+        <button class="btn-back" onclick="navegar('pantalla-inicio')">Volver al inicio</button>
+    </div>
+</div>
+
+<div id="pantalla-comprar" class="container hidden">
+    <div class="content-wrapper">
+        <h3>Datos del Comprador</h3>
+        <form id="formComprar">
+            <label>Nombre completo *</label>
+            <input type="text" id="nombreC" placeholder="Ej. Luis N." required>
+            <label>WhatsApp *</label>
+            <input type="tel" id="telC" placeholder="33 0000 0000" required>
+            <label>Presupuesto estimado</label>
+            <input type="text" id="presupuestoC" placeholder="Ej. 2 Millones">
+            <label>Zona de interés</label>
+            <input type="text" id="zonaC" placeholder="Ej. Nuevo México, Zapopan.">
+            <button type="button" class="action-btn" onclick="procesarLead('comprador')">📥 ENVIAR Y DESCARGAR GUÍA</button>
+            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver</button>
+        </form>
+    </div>
+</div>
+
+<div id="pantalla-vender" class="container hidden">
+    <div class="content-wrapper">
+        <h3>Datos del Vendedor</h3>
+        <form id="formVender">
+            <label>Nombre completo *</label>
+            <input type="text" id="nombreV" placeholder="Escribe tu nombre" required>
+            <label>WhatsApp *</label>
+            <input type="tel" id="telV" placeholder="33 0000 0000" required>
+            <label>Tipo de propiedad</label>
+            <select id="tipoPropiedadV">
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+                <option value="Terreno">Terreno</option>
+            </select>
+            <label>Ubicación de la propiedad</label>
+            <input type="text" id="ubicacionV" placeholder="Ej. Nuevo México, Zapopan.">
+            <label>Motivo de la venta</label>
+            <textarea id="motivoV" rows="2" placeholder="Ej. Necesito mudarme"></textarea>
+            <button type="button" class="action-btn" onclick="procesarLead('vendedor')">📥 ENVIAR Y DESCARGAR GUÍA</button>
+            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const miTelefono = "523322975228";
+    const linkPDF = "https://drive.google.com/file/d/1aQnQ9ev5p4DA6ueZRIt01P1Su1SzDYjO/view?usp=drive_link";
+
+    function navegar(idPantalla) {
+        document.getElementById('pantalla-inicio').classList.add('hidden');
+        document.getElementById('pantalla-conoceme').classList.add('hidden');
+        document.getElementById('pantalla-comprar').classList.add('hidden');
+        document.getElementById('pantalla-vender').classList.add('hidden');
+        document.getElementById(idPantalla).classList.remove('hidden');
+    }
+
+    function procesarLead(tipo) {
+        let nom, tel, msj;
+        if (tipo === 'comprador') {
+            nom = document.getElementById('nombreC').value;
+            tel = document.getElementById('telC').value;
+            const pre = document.getElementById('presupuestoC').value;
+            const zon = document.getElementById('zonaC').value;
+            if(!nom || !tel) return alert("Por favor llena los campos obligatorios");
+            msj = `*NUEVO REGISTRO COMPRADOR:*%0A- Nombre: ${nom}%0A- WhatsApp: ${tel}%0A- Presupuesto: ${pre}%0A- Zona: ${zon}`;
+        } else {
+            nom = document.getElementById('nombreV').value;
+            tel = document.getElementById('telV').value;
+            const tipoP = document.getElementById('tipoPropiedadV').value;
+            const ubi = document.getElementById('ubicacionV').value;
+            const mot = document.getElementById('motivoV').value;
+            if(!nom || !tel) return alert("Por favor llena los campos obligatorios");
+            msj = `*NUEVO REGISTRO VENDEDOR:*%0A- Nombre: ${nom}%0A- WhatsApp: ${tel}%0A- Propiedad: ${tipoP}%0A- Ubicación: ${ubi}%0A- Motivo: ${mot}`;
+        }
+        window.open(`https://wa.me/${miTelefono}?text=${msj}`, '_blank');
+        setTimeout(() => { window.location.href = linkPDF; }, 1200);
+    }
+</script>
+
+</body>
+</html>
