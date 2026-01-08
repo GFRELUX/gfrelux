@@ -38,13 +38,24 @@
         h3 { color: #2c3e50; margin-bottom: 15px; }
         p { color: #7f8c8d; margin-bottom: 25px; font-size: 15px; line-height: 1.5; }
         
+        /* Contenedor especial para tu descripción */
+        .descripcion-texto {
+            text-align: justify;
+            max-height: 320px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+
         /* Botones */
         .menu-btn { width: 100%; padding: 18px; margin: 10px 0; border: none; border-radius: 10px; font-size: 17px; cursor: pointer; font-weight: bold; transition: 0.3s; color: white; }
         .btn-blue { background-color: #34495e; }
         .btn-green { background-color: #27ae60; }
-        .btn-gold { background-color: #d4af37; } /* Color para "Conóceme" */
+        .btn-gold { background-color: #d4af37; } 
         
-        /* Sección de confianza */
         .trust-box { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: left; border-left: 4px solid #27ae60; }
         .trust-item { font-size: 13px; color: #444; margin-bottom: 8px; display: flex; align-items: center; }
         .trust-item span { margin-right: 8px; }
@@ -62,9 +73,26 @@
     <div class="content-wrapper">
         <h2>GF Relux</h2>
         <p>Expertos en asesoría inmobiliaria.</p>
-        <button class="menu-btn btn-gold" onclick="navegar('pantalla-conoceme')">👤 ¿QUIEN ES GABRIEL FLORES?</button>
+        <button class="menu-btn btn-gold" onclick="navegar('pantalla-descripcion')">👤 ¿QUIEN ES GABRIEL FLORES?</button>
         <button class="menu-btn btn-blue" onclick="navegar('pantalla-comprar')">🗝️ QUIERO COMPRAR</button>
         <button class="menu-btn btn-green" onclick="navegar('pantalla-vender')">🏡 QUIERO VENDER</button>
+    </div>
+</div>
+
+<div id="pantalla-descripcion" class="container hidden">
+    <div class="content-wrapper">
+        <h3>Gabriel Flores Palacios</h3>
+       <div class="descripcion-texto">
+    <p>Mi nombre es <b>Gabriel Flores Palacios</b>. Soy <b>Ingeniero en Mecatrónica</b> y profesional inmobiliario especializado en la <b>protección de patrimonio</b>. Mi trayectoria en compañías globales como Jabil y Continental forjó en mí una disciplina de precisión, responsabilidad y resultados que hoy aplico rigurosamente en el sector bienes raíces.</p>
+    
+    <p>Entiendo que una propiedad no es solo un inmueble; es el esfuerzo de toda una vida, el ahorro de una familia y el cimiento de un futuro. Como profesional que valora el trabajo honesto, mi enfoque se aleja del vendedor tradicional para centrarme en la <b>asesoría técnica y legal</b>.</p>
+    
+    <p>Mi misión es <b>blindar tu inversión</b>. Utilizo mi formación analítica para asegurar que cada paso del proceso sea transparente, informado y libre de riesgos. Trabajo para evitar que mis clientes enfrenten las frustraciones o pérdidas económicas que resultan de una asesoría deficiente.</p>
+    
+    <p>Para mí, el éxito no es cerrar una venta, sino garantizar la <b>tranquilidad y el bienestar financiero</b> de las familias que confían en mi gestión. Mi compromiso contigo es claridad absoluta, seguridad jurídica y la protección total de tu patrimonio de principio a fin.</p>
+</div>
+        <button class="menu-btn btn-green" onclick="navegar('pantalla-conoceme')">VER MI COMPROMISO CONTIGO ✅</button>
+        <button class="btn-back" onclick="navegar('pantalla-inicio')">Volver al inicio</button>
     </div>
 </div>
 
@@ -72,18 +100,14 @@
     <div class="content-wrapper">
         <h3>¿Por qué confiar en nosotros?</h3>
         <p>En <b>GF Relux</b>, la transparencia es nuestra prioridad. Soy un asesor profesional dedicado a proteger tu patrimonio.</p>
-        
         <div class="trust-box">
             <div class="trust-item"><span>✅</span> Alianzas con notarios públicos y brokers hipotecarios certificados.</div>
             <div class="trust-item"><span>✅</span> Contratos revisados y validados legalmente.</div>
             <div class="trust-item"><span>✅</span> Procesos claros, honestos y enfocados en proteger su inversión.</div>
             <div class="trust-item"><span>✅</span> Acompañamiento de principio a fin, resolviendo cada duda con precisión.</div>
         </div>
-
-        <p style="font-size: 13px;">La confianza se construye con resultados, claridad y decisiones bien acompañadas.</p>
-        
         <button class="menu-btn btn-blue" onclick="window.open('https://www.facebook.com/GFrelux/')">📱 VER FACEBOOK</button>
-        <button class="btn-back" onclick="navegar('pantalla-inicio')">Volver al inicio</button>
+        <button class="btn-back" onclick="navegar('pantalla-descripcion')">Regresar a mi perfil</button>
     </div>
 </div>
 
@@ -100,7 +124,7 @@
             <label>Zona de interés</label>
             <input type="text" id="zonaC" placeholder="Ej. Nuevo México, Zapopan.">
             <button type="button" class="action-btn" onclick="procesarLead('comprador')">📥 ENVIAR Y DESCARGAR GUÍA</button>
-            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver</button>
+            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver al inicio</button>
         </form>
     </div>
 </div>
@@ -124,7 +148,7 @@
             <label>Motivo de la venta</label>
             <textarea id="motivoV" rows="2" placeholder="Ej. Necesito mudarme"></textarea>
             <button type="button" class="action-btn" onclick="procesarLead('vendedor')">📥 ENVIAR Y DESCARGAR GUÍA</button>
-            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver</button>
+            <button type="button" class="btn-back" onclick="navegar('pantalla-inicio')">Volver al inicio</button>
         </form>
     </div>
 </div>
@@ -135,6 +159,7 @@
 
     function navegar(idPantalla) {
         document.getElementById('pantalla-inicio').classList.add('hidden');
+        document.getElementById('pantalla-descripcion').classList.add('hidden');
         document.getElementById('pantalla-conoceme').classList.add('hidden');
         document.getElementById('pantalla-comprar').classList.add('hidden');
         document.getElementById('pantalla-vender').classList.add('hidden');
@@ -165,5 +190,4 @@
 </script>
 
 </body>
-
 </html>
